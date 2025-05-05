@@ -1,0 +1,125 @@
+//* IMPORTS
+
+@use '../../global/vars';
+@use '../../global/mixins';
+@use '../../global/extends';
+
+#summonMeSection {
+  @include mixins.flex-box($direction: column, $gap: vars.$gap-m);
+
+  overflow-y: hidden;
+  padding: vars.$padding-xl 0;
+
+  @extend %bgImg;
+
+  .h2SummonMe {
+    @extend %regularH2;
+  }
+
+  .mainSMContainer {
+    @include mixins.flex-box($jc: space-evenly, $gap: vars.$gap-xl);
+
+    width: 100%;
+    max-width: 1000px;
+    padding: vars.$padding-s;
+
+    background-color: vars.$bg-expStu-light-mode;
+    box-shadow: vars.$box-shadow-card-light;
+    border-radius: vars.$border-radius-xxs;
+
+    .summonMeContainer {
+      @include mixins.flex-box($direction: column, $gap: vars.$gap-m);
+
+      max-width: 400px;
+
+      .h4SummonMe {
+        font-family: vars.$text-font;
+        font-size: vars.$secondary-title-font-size;
+
+        span {
+          color: vars.$secondary-light-color;
+        }
+      }
+
+      .summonIcon {
+        width: vars.$spacing-m * 2;
+        margin: vars.$margin-s;
+
+        filter: vars.$summonMeIcon-drop-shadow;
+      }
+
+      .selectFriendsContainer {
+        @include mixins.flex-box($direction: column, $gap: vars.$gap-xl);
+
+        .pSummonMe {
+          font-family: vars.$text-font;
+          font-size: vars.$secondary-subtitle-font-size;
+          text-align: center;
+
+          span {
+            color: vars.$secondary-light-color;
+          }
+        }
+
+        .friendsBtnContainer {
+          @include mixins.flex-box($gap: vars.$gap-s);
+
+          .summonFriendBtn {
+            .btnIcon {
+              width: vars.$spacing-rem-xl;
+            }
+          }
+        }
+      }
+    }
+
+    .formContainer {
+      height: 100%;
+      width: 100%;
+      max-width: 400px;
+      padding: vars.$padding-m;
+
+      background-color: vars.$cream-color-blur;
+      border: 2px solid vars.$secondary-light-color;
+      border-radius: vars.$border-radius-xxs;
+      box-shadow: vars.$box-shadow-inset;
+    }
+  }
+
+  .selectedBtn {
+    color: vars.$hover-button-primary-color;
+    background-color: vars.$hover-bg-button-primary-color;
+    box-shadow: vars.$box-shadow-btn-hover;
+  }
+}
+
+@media (max-width: 400px) {
+  .summonMeContainer {
+    gap: vars.$gap-xs !important;
+  }
+
+  .h2SummonMe {
+    font-size: vars.$secondary-title-font-size !important;
+  }
+
+  .h4SummonMe {
+    font-size: vars.$primary-subtitle-font-size !important;
+    text-align: center;
+  }
+
+  .summonIcon {
+    width: vars.$spacing-l !important;
+    margin: 0 !important;
+    margin-top: vars.$margin-s !important;
+  }
+
+  .selectFriendsContainer {
+    gap: vars.$gap-s !important;
+  }
+
+  .summonFriendBtn {
+    .btnIcon {
+      width: vars.$spacing-rem-s !important;
+    }
+  }
+}

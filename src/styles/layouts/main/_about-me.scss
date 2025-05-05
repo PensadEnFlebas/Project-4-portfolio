@@ -1,0 +1,55 @@
+//* IMPORTS
+
+@use '../../global/vars';
+@use '../../global/mixins';
+@use '../../global/extends';
+
+#aboutMeSection {
+  @include mixins.flex-box($direction: column, $gap: vars.$gap-m);
+
+  overflow-y: hidden;
+  padding: vars.$padding-xl (vars.$padding-l * 2);
+
+  @extend %bgImg;
+
+  .h2AboutMe {
+    @extend %regularH2;
+  }
+
+  .aboutMeTextContainer {
+    @include mixins.flex-box($direction: column, $gap: vars.$gap-s);
+
+    margin: auto;
+    max-width: 700px;
+    font-family: vars.$text-font;
+    font-size: vars.$text-font-size-l;
+    text-align: justify;
+
+    .pAboutMe {
+      background-color: vars.$bg-expStu-light-mode;
+      border-radius: vars.$border-radius-xxs;
+      padding: vars.$padding-xs;
+      box-shadow: vars.$box-shadow-card-light;
+    }
+
+    span {
+      font-size: vars.$text-font-size-xl;
+      font-style: italic;
+      color: vars.$secondary-light-color;
+    }
+  }
+}
+
+@media (max-width: 400px) {
+  .aboutMeTextContainer {
+    font-size: vars.$text-font-size-m !important;
+
+    .h2AboutMe {
+      font-size: vars.$secondary-title-font-size !important;
+    }
+
+    span {
+      font-size: vars.$text-font-size-l !important;
+    }
+  }
+}

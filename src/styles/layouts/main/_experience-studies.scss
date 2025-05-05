@@ -1,0 +1,24 @@
+//* IMPORTS
+
+@use '../../global/vars';
+@use '../../global/mixins';
+@use '../../global/extends';
+
+#expStuSection {
+  overflow-y: hidden;
+  padding: (vars.$padding-xxl + vars.$padding-xxs) 0;
+
+  @extend %bgImg;
+
+  .expStuContainer {
+    @include mixins.flex-box($gap: vars.$gap-xxl);
+
+    margin-bottom: (vars.$margin-xxl + vars.$margin-xxs) * 2;
+  }
+}
+
+@media (max-width: 632px) {
+  .expStuContainer {
+    margin-bottom: vars.$margin-xxl + vars.$margin-xxs !important;
+  }
+}

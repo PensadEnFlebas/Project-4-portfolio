@@ -1,0 +1,60 @@
+//* IMPORTS
+
+@use '../global/vars';
+@use '../global/mixins';
+@use '../global/extends';
+
+#summonMeForm {
+  @include mixins.flex-box($direction: column, $gap: vars.$gap-m);
+
+  align-content: center;
+
+  .formInput {
+    width: 100%;
+    padding: vars.$padding-xs vars.$padding-m;
+
+    border: none;
+    border-radius: vars.$border-radius-xxs;
+    background-color: vars.$tertiary-color;
+    box-shadow: vars.$box-shadow-inset;
+
+    &:not(:last-of-type) {
+      height: vars.$spacing-xxl;
+    }
+
+    &::placeholder {
+      text-align: center;
+    }
+
+    &:last-of-type {
+      &::placeholder {
+        transform: translateY(vars.$spacing-xs);
+      }
+    }
+  }
+
+  textarea {
+    margin: 2px;
+    text-align: center;
+  }
+
+  .submitBtn {
+    width: 90%;
+    justify-content: center;
+    background: vars.$header-gradient;
+
+    font-family: vars.$titles-font;
+    font-size: vars.$button-font-size-large;
+    letter-spacing: 1.2px;
+
+    &:hover {
+      background: vars.$tertiary-color;
+      color: vars.$secondary-light-color;
+    }
+
+    .submitBtnIcon {
+      width: vars.$spacing-m;
+      color: vars.$tertiary-color;
+    }
+  }
+}

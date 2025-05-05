@@ -1,0 +1,103 @@
+//* IMPORTS
+
+@use './styles/global/vars';
+@use './styles/global/mixins';
+@use './styles/layouts/header';
+@use './styles/components/burgerMenu';
+@use './styles/layouts/main/hero';
+@use './styles/layouts/main/about-me';
+@use './styles/layouts/main/skills';
+@use './styles/components/skill-details';
+@use './styles/components/button';
+@use './styles/layouts/main/experience-studies';
+@use './styles/components/exp-and-stu-cards';
+@use './styles/layouts/main/testimonials';
+@use './styles/components/testimonial-cards';
+@use './styles/layouts/main/summon-me';
+@use './styles/components/form';
+@use './styles/layouts/footer';
+
+//* GENERAL
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul,
+li {
+  list-style-type: none;
+}
+
+body {
+  overflow-x: hidden;
+  width: 100%;
+  height: 500px;
+
+  background-color: vars.$bg-light-mode;
+  color: vars.$text-light-mode-color;
+}
+
+//* DARK MODE
+
+.dark {
+  background-color: vars.$bg-dark-mode;
+  color: vars.$text-dark-mode-color;
+
+  .pAboutMe {
+    background-color: vars.$transparent-color !important;
+    border-radius: 0px;
+    padding: 0px;
+    box-shadow: none !important;
+  }
+
+  .nonClickedBtn {
+    box-shadow: vars.$box-shadow-btnDark;
+  }
+
+  .expStuCard {
+    background-color: vars.$transparent-color !important;
+    box-shadow: none !important;
+  }
+
+  .expTitle,
+  .stuTitle,
+  .expCompany,
+  .stuCenter {
+    color: vars.$cream-color !important;
+  }
+
+  .mainSMContainer {
+    background-color: vars.$transparent-color !important;
+    box-shadow: none !important;
+  }
+
+  .summonIcon {
+    filter: vars.$summonMeIcon-drop-shadow-darkMode !important;
+  }
+
+  .summonFriendBtn {
+    box-shadow: vars.$box-shadow-btnDark;
+  }
+
+  .formContainer {
+    background-color: vars.$transparent-color !important;
+    box-shadow: inset 2px 2px 10px vars.$secondary-light-color !important;
+  }
+
+  .submitBtn {
+    background: vars.$submitBtn-gradient-darkMode !important;
+    color: vars.$secondary-color;
+
+    &:hover {
+      background: vars.$tertiary-color !important;
+      color: vars.$secondary-light-color !important;
+    }
+  }
+}

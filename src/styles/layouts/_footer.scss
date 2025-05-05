@@ -1,0 +1,45 @@
+//* IMPORTS
+
+@use '../global/vars';
+@use '../global/mixins';
+@use '../global/extends';
+
+footer {
+  background: vars.$footer-gradient;
+  border-top: 4px solid vars.$transparent-color;
+  border-image: linear-gradient(
+    0.25turn,
+    vars.$primary-color,
+    vars.$primary-light-color,
+    vars.$transparent-color
+  );
+  border-image-slice: 1;
+
+  .pFooter {
+    font-family: vars.$text-font;
+    font-size: vars.$footer-font-size;
+    color: vars.$primary-color;
+    text-align: center;
+    margin-top: vars.$margin-m;
+
+    span {
+      color: vars.$secondary-light-color;
+    }
+  }
+
+  .footerIconsDiv {
+    @include mixins.flex-box($gap: vars.$gap-xxl, $wrap: nowrap);
+
+    padding: vars.$padding-s 0;
+
+    .footerIcon {
+      width: vars.$spacing-xl;
+
+      &:hover {
+        animation: vars.$pulse-animation 0.6s ease-in-out;
+        transform: translate3d(0, 0, 0);
+        perspective: 1000px;
+      }
+    }
+  }
+}

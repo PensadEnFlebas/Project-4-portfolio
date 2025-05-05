@@ -1,0 +1,89 @@
+//* IMPORTS
+
+@use '../global/vars';
+@use '../global/mixins';
+
+.btn {
+  all: unset;
+
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: vars.$btnGap;
+
+  padding: vars.$btnPadding;
+  border-radius: vars.$border-radius-xs;
+  font-family: vars.$buttons-font;
+  font-size: vars.$button-font-size;
+  color: vars.$button-primary-color;
+  background-color: vars.$bg-button-primary-color;
+  box-shadow: vars.$box-shadow-btn;
+
+  transition: all 0.3s ease-in-out;
+
+  .btnIcon {
+    width: vars.$spacing-rem-xxl;
+  }
+
+  &:hover {
+    color: vars.$hover-button-primary-color;
+    background-color: vars.$hover-bg-button-primary-color;
+    box-shadow: vars.$box-shadow-btn-hover;
+  }
+
+  &:focus-visible {
+    outline: 2px solid vars.$primary-color;
+    outline-offset: 2px;
+    box-shadow: 0 0 0 3px vars.$tertiary-color;
+  }
+
+  &:active {
+    transform: scale(0.9);
+  }
+}
+
+.expBtn,
+.stuBtn {
+  font-family: vars.$titles-font;
+  font-size: vars.$primary-title-font-size;
+  background-image: vars.$logo-gradient;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: vars.$transparent-color;
+
+  box-shadow: vars.$box-shadow-btn;
+}
+
+.clickedBtn {
+  box-shadow: vars.$box-shadow-btn-hover;
+  transform: scale(1.1);
+}
+
+.nonClickedBtn {
+  filter: blur(2px);
+
+  &:hover {
+    filter: none;
+    box-shadow: vars.$box-shadow-btn;
+  }
+}
+
+@media (max-width: 630px) {
+  .expBtn,
+  .stuBtn {
+    font-size: vars.$button-font-size-large !important;
+    padding: vars.$btnPadding-responsive;
+
+    .btnIcon {
+      width: vars.$spacing-rem-m;
+    }
+  }
+}
+
+@media (max-width: 320px) {
+  .expBtn,
+  .stuBtn {
+    margin-left: vars.$margin-m;
+    margin-right: vars.$margin-m;
+  }
+}

@@ -1,0 +1,81 @@
+//* IMPORTS
+
+@use '../global/vars';
+@use '../global/mixins';
+
+.testimonialCard {
+  @include mixins.flex-box($direction: column, $jc: start, $gap: vars.$gap-xs);
+
+  height: 700px;
+
+  background-color: vars.$cream-color;
+  padding: vars.$padding-xs;
+  border-radius: vars.$border-radius-xxs;
+  box-shadow: vars.$box-shadow;
+
+  text-align: justify;
+
+  #testimonialImg {
+    width: 300px;
+    height: 250px;
+
+    border-radius: vars.$border-radius-xxs;
+    cursor: pointer;
+
+    &:hover {
+      animation: vars.$shake-animation 0.82s
+        cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+      transform: translate3d(0, 0, 0);
+      perspective: 1000px;
+    }
+  }
+
+  .testimonialName {
+    font-family: vars.$text-font;
+    font-size: vars.$text-font-size-xxl;
+    color: vars.$secondary-light-color;
+  }
+
+  .testimonialDescription {
+    font-family: vars.$text-font;
+    font-size: vars.$text-font-size-m;
+    color: vars.$text-light-mode-color;
+    text-align: center;
+  }
+
+  .testimonialIcon {
+    width: vars.$spacing-l * 2;
+    filter: vars.$testimonialIcon-drop-shadow;
+  }
+
+  .testimonialText {
+    font-family: vars.$cards-font;
+    font-size: vars.$text-font-size-xl;
+    color: vars.$text-light-mode-color;
+    line-height: 1;
+
+    span {
+      font-style: italic;
+    }
+  }
+
+  .testimonialBtn {
+    width: 90%;
+    margin-top: auto;
+    justify-content: center;
+    letter-spacing: 0.8px;
+
+    font-size: vars.$button-testimonial;
+    text-wrap: nowrap;
+
+    .btnIcon {
+      width: vars.$spacing-rem-xl;
+    }
+  }
+}
+
+@media (max-width: 320px) {
+  .testimonialCard {
+    transform: scale(0.9);
+  }
+}

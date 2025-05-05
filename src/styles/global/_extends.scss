@@ -1,0 +1,22 @@
+//* IMPORTS
+
+@use './vars';
+
+//? H2 EXTENDS
+
+%regularH2 {
+  font-family: vars.$titles-font;
+  font-size: vars.$primary-title-font-size;
+  background-image: vars.$logo-gradient;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: vars.$transparent-color;
+}
+
+//? BG WHITE SECTIONS
+
+%bgImg {
+  background-image: url('../../../../public/assets/Experience mod..png');
+  background-size: cover;
+  background-position: center;
+}

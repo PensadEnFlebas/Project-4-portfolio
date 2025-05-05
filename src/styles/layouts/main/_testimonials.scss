@@ -1,0 +1,56 @@
+//* IMPORTS
+
+@use '../../global/vars';
+@use '../../global/mixins';
+@use '../../global/extends';
+
+#testimonialSection {
+  @include mixins.flex-box($direction: column, $gap: vars.$gap-m);
+
+  padding: vars.$padding-xl 0;
+  background-color: vars.$secondary-color;
+
+  .h2Testimonial {
+    @extend %regularH2;
+
+    span {
+      font-family: vars.$text-font;
+      font-size: vars.$secondary-title-font-size;
+    }
+  }
+
+  .testimonialContainer {
+    @include mixins.flex-box($gap: vars.$gap-xxl, $jc: start, $wrap: nowrap);
+
+    width: 100vw;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding: vars.$padding-xl;
+
+    &::-webkit-scrollbar {
+      height: vars.$spacing-s;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: vars.$secondary-color;
+      border: 2px solid vars.$cream-color;
+      border-radius: vars.$border-radius-xs;
+    }
+
+    &::-webkit-scrollbar-track {
+      background-color: vars.$cream-color;
+      border-radius: vars.$border-radius-xs;
+      margin: 0 vars.$margin-m;
+    }
+  }
+}
+
+@media (max-width: 400px) {
+  #testimonialSection {
+    font-size: vars.$text-font-size-s !important;
+
+    .h2Testimonial {
+      font-size: vars.$secondary-title-font-size !important;
+    }
+  }
+}

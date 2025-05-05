@@ -1,0 +1,63 @@
+//* IMPORTS
+
+@use '../global/vars';
+@use '../global/mixins';
+
+.closeDetailBtn {
+  align-self: flex-start;
+  margin: 0px vars.$margin-xs;
+  margin-top: vars.$margin-xs;
+  background: vars.$transparent-color;
+  color: vars.$secondary-light-color;
+  font-weight: 900;
+  text-shadow: vars.$link-hover-text-shadow;
+  width: vars.$spacing-xl;
+  border: none;
+  cursor: pointer;
+
+  font-size: vars.$spacing-rem-xxl;
+  transition: all 0.5s ease-in-out;
+
+  &:hover {
+    animation: vars.$pulse-animation 0.6s ease-in-out;
+    transform: translate3d(0, 0, 0);
+    perspective: 1000px;
+  }
+}
+
+.detailImg {
+  width: 70%;
+  max-width: 400px;
+  height: auto;
+  border-radius: vars.$border-radius-xxs;
+
+  box-shadow: vars.$box-shadow;
+}
+
+.detailText {
+  font-family: vars.$text-font;
+  font-size: vars.$text-font-size-l;
+  color: vars.$cream-color;
+  padding: vars.$padding-m;
+  text-align: justify;
+  line-height: 1.4;
+
+  span {
+    font-size: vars.$text-font-size-xl;
+    color: vars.$primary-color;
+  }
+}
+
+@media (max-width: 400px) {
+  .closeDetailBtn {
+    font-size: vars.$spacing-rem-xl !important;
+  }
+
+  .detailText {
+    font-size: vars.$text-font-size-m !important;
+
+    span {
+      font-size: vars.$text-font-size-l !important;
+    }
+  }
+}

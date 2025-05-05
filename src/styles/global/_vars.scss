@@ -1,0 +1,279 @@
+//! FONTS
+
+//? FONT FAMILY
+@font-face {
+  font-family: handwritte;
+  src: url(../fonts/handwritte.otf);
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: caslon;
+  src: url(../fonts/CaslonAntique.ttf);
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: cthulhumbus;
+  src: url(../fonts/cthulhumbus.ttf);
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: cthulhusCalling;
+  src: url(../fonts/cthulhus_calling.otf);
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+$text-font: cthulhumbus, 'Open Sans', system-ui, -apple-system,
+  BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell,
+  'Helvetica Neue', sans-serif;
+$titles-font: cthulhusCalling, 'Open Sans', system-ui, -apple-system,
+  BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell,
+  'Helvetica Neue', sans-serif;
+$handwritte-text: handwritte, 'Open Sans', system-ui, -apple-system,
+  BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell,
+  'Helvetica Neue', sans-serif;
+$cards-font: caslon, 'Open Sans', system-ui, -apple-system, BlinkMacSystemFont,
+  'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+$buttons-font: caslon, 'Open Sans', system-ui, -apple-system, BlinkMacSystemFont,
+  'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+
+//? FONT SIZE
+$primary-title-font-size: 50px;
+$secondary-title-font-size: 30px;
+$tertiary-title-font-size: 20px;
+$primary-subtitle-font-size: 20px;
+$secondary-subtitle-font-size: 15px;
+$tertiary-subtitle-font-size: 10px;
+
+$text-font-size-s: 10px;
+$text-font-size-m: 12px;
+$text-font-size-l: 14px;
+$text-font-size-xl: 16px;
+$text-font-size-xxl: 20px;
+
+$hero-text-font-size: 40px;
+$hero-text-font-size-small: 25px;
+
+$footer-font-size: 0.6em;
+
+$button-font-size-small: 0.5em;
+$button-font-size: 0.8em;
+$button-testimonial: 1em;
+$button-font-size-large: 1.2em;
+
+//! COLORS
+
+$primary-color: #151515;
+$primary-light-color: #2e2e2e;
+$secondary-color: #064e11;
+$secondary-color-blur: #064e111c;
+$secondary-light-color: #0b801d;
+$tertiary-color: #f5f5f5;
+$cream-color: #ecd9b3;
+$cream-color-blur: #f9c76245;
+$transparent-color: transparent;
+
+$text-light-mode-color: $primary-color;
+$text-dark-mode-color: $tertiary-color;
+
+$bg-light-mode: $tertiary-color;
+$bg-dark-mode: $primary-color;
+$bg-expStu-light-mode: rgba(245, 245, 245, 0.606);
+$bg-testimonialCards: $secondary-light-color;
+
+$button-primary-color: $tertiary-color;
+$button-secondary-color: $secondary-color;
+$bg-button-primary-color: $secondary-color;
+$bg-button-secondary-color: $tertiary-color;
+$hover-button-primary-color: $secondary-color;
+$hover-button-secondary-color: $tertiary-color;
+$hover-bg-button-primary-color: $tertiary-color;
+$hover-bg-button-secondary-color: $secondary-color;
+
+$input-color: $secondary-color;
+
+//! SPACINGS
+
+$spacing-xxs: 5px;
+$spacing-xs: 10px;
+$spacing-s: 15px;
+$spacing-m: 20px;
+$spacing-l: 25px;
+$spacing-xl: 30px;
+$spacing-xxl: 35px;
+
+$spacing-rem-xxs: 0.5rem;
+$spacing-rem-xs: 0.8rem;
+$spacing-rem-s: 1rem;
+$spacing-rem-m: 1.2rem;
+$spacing-rem-l: 1.4rem;
+$spacing-rem-xl: 1.5rem;
+$spacing-rem-xxl: 2rem;
+
+$padding-xxs: $spacing-xxs;
+$padding-xs: $spacing-xs;
+$padding-s: $spacing-s;
+$padding-m: $spacing-m;
+$padding-l: $spacing-l;
+$padding-xl: $spacing-xl;
+$padding-xxl: $spacing-xxl;
+
+$margin-xxs: $spacing-xxs;
+$margin-xs: $spacing-xs;
+$margin-s: $spacing-s;
+$margin-m: $spacing-m;
+$margin-l: $spacing-l;
+$margin-xl: $spacing-xl;
+$margin-xxl: $spacing-xxl;
+
+$gap-xxs: $spacing-xxs;
+$gap-xs: $spacing-xs;
+$gap-s: $spacing-s;
+$gap-m: $spacing-m;
+$gap-l: $spacing-l;
+$gap-xl: $spacing-xl;
+$gap-xxl: $spacing-xxl;
+
+$btnGap: $spacing-xs;
+$btnPadding: $spacing-rem-xxs $spacing-rem-s;
+$btnPadding-responsive: $spacing-xxs $spacing-xs;
+
+//! BORDERS
+
+$noBorder: none;
+$border-radius-circle: 50%;
+
+$border-radius-xxs: $spacing-xxs;
+$border-radius-xs: $spacing-xs;
+$border-radius-s: $spacing-s;
+$border-radius-m: $spacing-m;
+
+//! SHADOWS
+
+$link-text-shadow: -1px -1px 1px rgba(255, 255, 255, 0.1),
+  1px 1px 1px rgba(0, 0, 0, 0.5);
+$link-hover-text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff,
+  0 0 20px #49ff18, 0 0 30px #49ff18, 0 0 40px #49ff18, 0 0 55px #49ff18,
+  0 0 75px #49ff18;
+$img-drop-shadow: drop-shadow(5px 5px 10px $cream-color);
+$testimonialIcon-drop-shadow: drop-shadow(1px 1px 5px $primary-color);
+$summonMeIcon-drop-shadow: drop-shadow(1px 1px 2px $primary-color);
+$summonMeIcon-drop-shadow-darkMode: drop-shadow(1px 1px 2px $tertiary-color);
+$expStuImg-drop-shadow: drop-shadow(0px 0px 5px $cream-color);
+$text-drop-shadow: drop-shadow(0px 0px ($spacing-xxl * 2) $tertiary-color);
+
+$box-shadow: 5px 5px 15px 5px $primary-color;
+$box-shadow-btn: 1px 1px 4px 1px $primary-color;
+$box-shadow-card: 1px 1px 80px 15px $primary-color;
+$box-shadow-card-light: 0px 0px 80px 20px $tertiary-color;
+$box-shadow-btnDark: 1px 1px 4px 2px $tertiary-color;
+$box-shadow-btn-hover: 2px 2px 10px 5px $secondary-light-color;
+$box-shadow-inset: inset 2px 2px 10px $primary-light-color;
+
+//! GRADIENTS
+
+$header-gradient: radial-gradient(
+  circle,
+  $secondary-light-color 30%,
+  $secondary-color 55%,
+  $primary-color 100%
+);
+
+$header-gradient-responsive: radial-gradient(
+  circle,
+  $primary-color 30%,
+  $secondary-color 55%,
+  $secondary-light-color 100%
+);
+
+$submitBtn-gradient: radial-gradient(
+  circle,
+  $secondary-light-color 30%,
+  $secondary-color 55%,
+  $primary-color 100%
+);
+
+$footer-gradient: radial-gradient(
+  circle,
+  $cream-color 30%,
+  $cream-color-blur 55%,
+  $secondary-light-color 100%
+);
+
+$submitBtn-gradient-darkMode: radial-gradient(
+  circle,
+  $cream-color 30%,
+  $cream-color-blur 55%,
+  $secondary-light-color 100%
+);
+
+$logo-gradient: linear-gradient(
+  180deg,
+  #457b41,
+  #527152 25%,
+  #4e564f 50%,
+  #b2b5b1 75%,
+  #cacaca 100%
+);
+
+//! SHAKE ANIMATIONS
+
+@keyframes shake {
+  10%,
+  90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+  20%,
+  80% {
+    transform: translate3d(2px, 0, 0);
+  }
+  30%,
+  50%,
+  70% {
+    transform: translate3d(-2px, 0, 0);
+  }
+  40%,
+  60% {
+    transform: translate3d(2px, 0, 0);
+  }
+}
+
+@keyframes wiggle {
+  0%,
+  100% {
+    transform: rotate(0deg) translate3d(0, 0, 0);
+  }
+  25% {
+    transform: rotate(0.5deg) translate3d(1px, 0, 0);
+  }
+  50% {
+    transform: rotate(-0.5deg) translate3d(-1px, 0, 0);
+  }
+  75% {
+    transform: rotate(0.5deg) translate3d(0.5px, 0, 0);
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-3px);
+  }
+}
+
+$shake-animation: shake;
+$wiggle-animation: wiggle;
+$pulse-animation: pulse;

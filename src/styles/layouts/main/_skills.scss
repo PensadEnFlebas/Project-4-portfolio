@@ -1,0 +1,100 @@
+//* IMPORTS
+
+@use '../../global/vars';
+@use '../../global/mixins';
+@use '../../global/extends';
+
+#skillsSection {
+  @include mixins.flex-box($direction: column, $gap: vars.$gap-m);
+
+  padding: vars.$padding-l;
+  padding-bottom: vars.$padding-xxl;
+  background-color: vars.$secondary-color;
+
+  .h2Skills {
+    @extend %regularH2;
+
+    span {
+      font-family: vars.$text-font;
+      font-size: vars.$secondary-title-font-size;
+    }
+  }
+
+  .skillsContainer {
+    @include mixins.flex-box($gap: vars.$gap-l);
+
+    width: 100%;
+    max-width: 800px;
+    margin: vars.$margin-xl 0;
+
+    .skillImg {
+      display: block;
+      height: 100px;
+      margin: auto;
+      margin-bottom: vars.$margin-m;
+
+      filter: vars.$img-drop-shadow;
+      cursor: pointer;
+
+      &:hover {
+        animation: vars.$shake-animation 0.82s
+          cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+        transform: translate3d(0, 0, 0);
+        perspective: 1000px;
+      }
+    }
+
+    .h3Skills {
+      text-align: center;
+      font-family: vars.$text-font;
+      letter-spacing: 1px;
+      color: vars.$cream-color;
+
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+
+      &:hover,
+      &.skillTextHighlight {
+        transform: scale(1.1);
+        color: vars.$primary-color;
+        text-shadow: vars.$link-hover-text-shadow;
+      }
+    }
+  }
+}
+
+.skillDetails {
+  @include mixins.flex-box($direction: column);
+  max-width: 1000px;
+
+  background-color: vars.$secondary-light-color;
+  border-radius: vars.$border-radius-xxs;
+  box-shadow: vars.$box-shadow;
+
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.5s ease, max-height 0.5s ease, transform 0.5s ease;
+  overflow: hidden;
+
+  &.hidden {
+    display: none;
+    opacity: 0;
+    max-height: 0;
+    transform: translateY(-(vars.$spacing-m));
+    pointer-events: none;
+  }
+}
+
+@media (max-width: 400px) {
+  #skillsSection {
+    font-size: vars.$text-font-size-s !important;
+
+    .h2Skills {
+      font-size: vars.$secondary-title-font-size !important;
+    }
+
+    #skillImg {
+      height: vars.$spacing-m * 4 !important;
+    }
+  }
+}

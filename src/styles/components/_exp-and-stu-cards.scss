@@ -1,0 +1,83 @@
+//* IMPORTS
+
+@use '../global/vars';
+@use '../global/mixins';
+
+.showedDiv {
+  @include mixins.flex-box();
+
+  box-shadow: vars.$box-shadow-btn-hover;
+  border-radius: vars.$border-radius-xxs;
+
+  width: 90%;
+  max-width: 800px;
+  margin: auto;
+  padding: vars.$padding-m;
+}
+
+.hiddenDiv {
+  display: none;
+}
+
+.expStuCard {
+  @include mixins.flex-box($direction: column, $gap: vars.$gap-xs);
+
+  width: 90%;
+  max-width: 600px;
+  text-align: justify;
+
+  background-color: vars.$bg-expStu-light-mode;
+  border-radius: vars.$border-radius-xxs;
+  padding: vars.$padding-xs;
+  box-shadow: vars.$box-shadow-card-light;
+
+  h3 {
+    font-family: vars.$handwritte-text;
+    font-size: vars.$hero-text-font-size;
+
+    color: vars.$secondary-light-color;
+    letter-spacing: 2px;
+    text-align: center;
+  }
+
+  p {
+    font-family: vars.$text-font;
+    font-size: vars.$text-font-size-xl;
+  }
+
+  .expCompany,
+  .stuCenter {
+    color: vars.$secondary-light-color;
+  }
+
+  .expDescription,
+  .stuList {
+    font-size: vars.$text-font-size-l;
+    line-height: 1.6;
+  }
+
+  .expStuImg {
+    width: vars.$spacing-xl * 2;
+    margin: vars.$margin-m 0;
+
+    filter: vars.$expStuImg-drop-shadow;
+  }
+}
+
+.stuCard {
+  text-align: center;
+}
+
+@media (max-width: 632px) {
+  p {
+    font-size: vars.$text-font-size-l !important;
+
+    padding: vars.$padding-xs;
+  }
+
+  .expDescription,
+  .stuList {
+    font-size: vars.$text-font-size-m !important;
+    line-height: 1.4;
+  }
+}

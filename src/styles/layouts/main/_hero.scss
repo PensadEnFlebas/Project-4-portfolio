@@ -1,0 +1,77 @@
+//* IMPORTS
+
+@use '../../global/vars';
+@use '../../global/mixins';
+
+#hero {
+  @include mixins.flex-box($gap: vars.$gap-m);
+
+  padding: vars.$padding-xl;
+  background-color: vars.$secondary-color;
+
+  .heroTextContainer {
+    @include mixins.flex-box($direction: column, $ai: start, $gap: vars.$gap-s);
+
+    width: 100%;
+    max-width: 600px;
+    font-family: vars.$text-font;
+    color: vars.$cream-color;
+
+    .h2Hero {
+      font-size: vars.$secondary-title-font-size;
+    }
+
+    .h3Hero {
+      font-size: vars.$primary-subtitle-font-size;
+    }
+
+    p {
+      font-family: vars.$handwritte-text;
+      font-style: italic;
+      font-size: vars.$hero-text-font-size;
+      letter-spacing: 2px;
+      color: vars.$tertiary-color;
+    }
+  }
+
+  #heroImg {
+    height: 250px;
+
+    filter: vars.$img-drop-shadow;
+    cursor: pointer;
+
+    &:hover {
+      animation: vars.$shake-animation 0.82s
+        cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+      transform: translate3d(0, 0, 0);
+      perspective: 1000px;
+    }
+  }
+}
+
+@media (max-width: 931px) {
+  .heroTextContainer {
+    align-items: center !important;
+    text-align: center;
+  }
+}
+
+@media (max-width: 400px) {
+  .heroTextContainer {
+    .h2Hero {
+      font-size: vars.$tertiary-title-font-size !important;
+    }
+
+    .h3Hero {
+      font-size: vars.$tertiary-subtitle-font-size !important;
+    }
+
+    p {
+      font-size: vars.$hero-text-font-size-small !important;
+    }
+  }
+
+  #heroImg {
+    height: 150px !important;
+  }
+}
