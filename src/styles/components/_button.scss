@@ -24,22 +24,6 @@
   .btnIcon {
     width: vars.$spacing-rem-xxl;
   }
-
-  &:hover {
-    color: vars.$hover-button-primary-color;
-    background-color: vars.$hover-bg-button-primary-color;
-    box-shadow: vars.$box-shadow-btn-hover;
-  }
-
-  &:focus-visible {
-    outline: 2px solid vars.$primary-color;
-    outline-offset: 2px;
-    box-shadow: 0 0 0 3px vars.$tertiary-color;
-  }
-
-  &:active {
-    transform: scale(0.9);
-  }
 }
 
 .expBtn,
@@ -61,11 +45,6 @@
 
 .nonClickedBtn {
   filter: blur(2px);
-
-  &:hover {
-    filter: none;
-    box-shadow: vars.$box-shadow-btn;
-  }
 }
 
 @media (max-width: 630px) {
@@ -85,5 +64,32 @@
   .stuBtn {
     margin-left: vars.$margin-m;
     margin-right: vars.$margin-m;
+  }
+}
+
+@media (min-width: 720px) {
+  .btn {
+    &:hover {
+      color: vars.$hover-button-primary-color;
+      background-color: vars.$hover-bg-button-primary-color;
+      box-shadow: vars.$box-shadow-btn-hover;
+    }
+
+    &:focus-visible {
+      outline: 2px solid vars.$primary-color;
+      outline-offset: 2px;
+      box-shadow: 0 0 0 3px vars.$tertiary-color;
+    }
+
+    &:active {
+      transform: scale(0.9);
+    }
+  }
+
+  .nonClickedBtn {
+    &:hover {
+      filter: none;
+      box-shadow: vars.$box-shadow-btn;
+    }
   }
 }
